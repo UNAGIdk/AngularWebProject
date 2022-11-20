@@ -1,0 +1,74 @@
+<!-- <ul *ngFor="let item of specs">
+    <li>
+        {{item.name}}
+        {{item.faculty}}
+        {{item.department}}
+        {{item.period}}
+        {{item.isMagistracy}}
+        {{item.directions?.name}}
+    </li>
+</ul> -->
+
+<br>
+
+<div class="field-checkbox">
+    <p-checkbox [binary]="true" inputId="binary" (onChange)="onfilter()"></p-checkbox>
+    <label for="binary"> Show Only Magistracy</label>
+</div>
+
+<label>Specifications:</label>
+
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Faculty
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+            Period
+        </th>
+        <th>
+            Is Magistracy
+        </th>
+        <th>
+            Direction
+        </th>
+    </tr>
+    <tr *ngFor="let item of data">
+        <th>{{item.name}}</th>
+        <th>{{item.faculty}}</th>
+        <th>{{item.department}}</th>
+        <th>{{item.period}}</th>
+        <th>{{item.isMagistracy}}</th>
+        <th>{{item.directions?.name}}</th>
+    </tr>
+</table>
+
+<br>
+
+<p-button label="Create new direction" (onClick)="showDialog()"></p-button>
+
+<p-dialog [(visible)]="displayDialog"> 
+    <app-form></app-form>
+</p-dialog>
+
+<br>
+<br>
+
+<p-button label="Create new specification" (onClick)="showDialog2()"></p-button>
+
+<br>
+<br>
+<br>
+<br>
+
+<p-button label="Log Out" (onClick)="onlogout()"></p-button>
+
+<p-dialog [(visible)]="displayDialog2">
+    <app-form2></app-form2>
+</p-dialog>

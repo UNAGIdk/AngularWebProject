@@ -1,0 +1,30 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <h1>Create new specification</h1>
+
+    <h4>Name:</h4>
+    <input type="text" pInputText formControlName="name" />
+    <br>
+
+    <h4>Faculty:</h4>
+    <input type="text" pInputText formControlName="faculty" />
+    <br>
+
+    <h4>Department:</h4>
+    <input type="text" pInputText formControlName="department" />
+    <br>
+
+    <h4>Period:</h4>
+    <p-inputNumber formControlName="period"> </p-inputNumber>
+    <br>
+
+    <h4>Is Magistracy:</h4>
+    <p-checkbox formControlName = "isMagistracy" [binary]="true"></p-checkbox>
+    <br>
+
+    <h4>Direction:</h4>
+    <p-dropdown optionLabel="name" [options]="dirs" formControlName = "directions"></p-dropdown>
+    <br>
+
+    <br>
+    <p-button label="Create" (onClick)="onSubmit(myForm)" [disabled]="!myForm.valid"></p-button>
+</form>
